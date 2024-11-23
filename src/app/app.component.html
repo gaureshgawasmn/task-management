@@ -1,10 +1,17 @@
 <app-header />
 
 <main>
-  <app-users />
+  <app-users (selectProfile)="onProfileSelect($event)" />
 
   <div>
     <router-outlet />
   </div>
+
+  @if(selectedImage){
+  <div class="modal">
+    <button class="close-button" (click)="onProfileClose()">X</button>
+    <img [src]="selectedImage" alt="Selected Image" class="large-image" />
+  </div>
+  }
 
 </main>
