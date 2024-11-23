@@ -1,6 +1,7 @@
 {
   "hosting": {
-    "public": "dist/routing/browser",
+    "public": "dist/task-managment/browser",
+    "site": "gg-demo-task-management",
     "ignore": [
       "firebase.json",
       "**/.*",
