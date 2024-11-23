@@ -7,9 +7,74 @@ main {
   gap: 2rem;
 }
 
+#users {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 0.5rem;
+  overflow: auto;
+}
+
+#fallback {
+  font-weight: bold;
+  font-size: 1.15rem;
+  margin: 0;
+  text-align: center;
+}
+
 @media (min-width: 768px) {
   main {
     margin: 4rem auto;
     grid-template-columns: 1fr 3fr;
   }
+
+  #users {
+    flex-direction: column;
+  }
+
+  #fallback {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.large-image {
+  max-width: 90%;
+  max-height: 90%;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.large-image:hover {
+  transform: scale(1.02);
+}
+
+.close-button {
+  position: absolute; /* This allows the button to be positioned inside the modal */
+  top: 10px; /* Distance from the top edge */
+  right: 10px; /* Distance from the right edge */
+  background: rgb(157, 160, 178); /* Button background color */
+  color: rgb(34, 4, 4); /* Button text color */
+  border: none;
+  border-radius: 50%;
+  width: 30px; /* Button size */
+  height: 30px;
+  font-size: 16px; /* Button text size */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
